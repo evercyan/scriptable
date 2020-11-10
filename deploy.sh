@@ -21,7 +21,7 @@
 
 # ---- push to `github` & `gitee`
 repoUrls=(
-    "https://github.com/evercyan/scriptable"
+    # "https://github.com/evercyan/scriptable"
     "https://gitee.com/evercyan/scriptable"
 )
 git add . && git commit -m 'auto'
