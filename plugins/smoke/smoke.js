@@ -30,9 +30,21 @@ class Smoke {
         let widget = new ListWidget()
         widget.setPadding(0, 0, 0, 0)
 
-        let emoji = widget.addText('🚭')
+        let cigarette = widget.addText('🚭')
+        cigarette.centerAlignText()
+        cigarette.font = Font.heavyRoundedSystemFont(50)
+
+        widget.addSpacer(5)
+
+        let count = widget.addText(dateInfo.weekAbbr)
+        count.centerAlignText()
+        count.font = Font.heavyRoundedSystemFont(40)
+
+        widget.addSpacer(5)
+
+        let emoji = widget.addText('🤬🤬🤬')
         emoji.centerAlignText()
-        emoji.font = Font.heavyRoundedSystemFont(60)
+        emoji.font = Font.boldSystemFont(25)
 
         return widget
     }
