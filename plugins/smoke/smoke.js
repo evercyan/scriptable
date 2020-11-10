@@ -36,7 +36,7 @@ class Smoke {
 
         widget.addSpacer(5)
 
-        let count = widget.addText(dateInfo.weekAbbr)
+        let count = widget.addText('15')
         count.centerAlignText()
         count.font = Font.heavyRoundedSystemFont(40)
 
