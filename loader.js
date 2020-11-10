@@ -706,7 +706,8 @@ class Loader {
     // debug 调试
     async debug() {
         this.log('debug begin')
-        this.initConfig('example/health')
+        this.initConfig('smoke')
+        // this.initConfig('example/health')
         // this.initConfig('example/notify')
         // this.initConfig('example/chart')
         // this.initConfig('example/transparent')
