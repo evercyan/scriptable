@@ -4,7 +4,7 @@
  * 纪录你的每一次烟雾缭绕的成仙之旅
  */
 
-class History {
+class Smoke {
 
     constructor(args = {}, loader = null) {
         this.args = args
