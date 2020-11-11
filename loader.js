@@ -411,6 +411,7 @@ class Loader {
             'xCount': xCount,
             'xSpace': xSpace,
             'xCoordY': xCoordY,
+            'countMax': countMax,
         })
         // 图表下边纵坐标
         let graphBottomY = wpHeight - widghtPaddingY - xConfig.size - elementMargin
