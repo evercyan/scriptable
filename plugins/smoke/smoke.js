@@ -152,7 +152,47 @@ class Smoke {
 
     // renderMedium ...
     async renderLarge() {
-        return await this.renderSmall()
+        let widget = new ListWidget()
+        widget.setPadding(0, 0, 0, 0)
+        widget.backgroundColor = Color.black()
+
+        let cigarette = widget.addText('🚬')
+        cigarette.centerAlignText()
+        cigarette.font = Font.heavyRoundedSystemFont(50)
+
+        widget.addSpacer(5)
+
+        let count = await this.getTodayCount()
+
+        let number = widget.addText(count.toString())
+        number.centerAlignText()
+        number.textColor = Color.white()
+        number.font = Font.heavyRoundedSystemFont(30)
+
+        widget.addSpacer(5)
+
+        let emoji = widget.addText(this.getEmoji(count))
+        emoji.centerAlignText()
+        emoji.font = Font.boldSystemFont(10)
+
+        widget.addSpacer(15)
+
+        let data = await this.getData(false, 7)
+        let list = []
+        for (let info of data) {
+            list.push({
+                'title': this.loader.getDate(info.date, 'day'),
+                'count': info.count.toString(),
+            })
+        }
+        let options = {
+            'widgetSize': this.widgetSize,
+        }
+
+        widget.addImage = await this.loader.drawChart('', list, options)
+        widget.centerAlignImage()
+
+        return widget
     }
 
     // --------------------------------
@@ -182,13 +222,13 @@ class Smoke {
         // let s = await this.render()
         // await s.presentSmall()
 
-        this.widgetSize = 'medium'
-        let m = await this.render()
-        await m.presentMedium()
+        // this.widgetSize = 'medium'
+        // let m = await this.render()
+        // await m.presentMedium()
 
-        // this.widgetSize = 'large'
-        // let l = await this.render()
-        // await l.presentLarge()
+        this.widgetSize = 'large'
+        let l = await this.render()
+        await l.presentLarge()
     }
 
     async init() {
