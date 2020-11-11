@@ -160,7 +160,7 @@ class Smoke {
         cigarette.centerAlignText()
         cigarette.font = Font.heavyRoundedSystemFont(80)
 
-        widget.addSpacer(10)
+        widget.addSpacer(5)
 
         let count = await this.getTodayCount()
 
@@ -169,13 +169,13 @@ class Smoke {
         number.textColor = Color.white()
         number.font = Font.heavyRoundedSystemFont(40)
 
-        widget.addSpacer(10)
+        widget.addSpacer(5)
 
         let emoji = widget.addText(this.getEmoji(count))
         emoji.centerAlignText()
         emoji.font = Font.boldSystemFont(15)
 
-        widget.addSpacer(10)
+        widget.addSpacer(5)
 
         let data = await this.getData(false, 7)
         let list = []
