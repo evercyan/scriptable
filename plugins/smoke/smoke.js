@@ -99,7 +99,7 @@ class Smoke {
         widget.setPadding(0, 0, 0, 0)
         widget.backgroundColor = Color.black()
         // 打开动作
-        widget.url = ''
+        // widget.url = ''
 
         let cigarette = widget.addText('🚬')
         cigarette.centerAlignText()
