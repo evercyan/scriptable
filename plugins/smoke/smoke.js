@@ -158,24 +158,24 @@ class Smoke {
 
         let cigarette = widget.addText('🚬')
         cigarette.centerAlignText()
-        cigarette.font = Font.heavyRoundedSystemFont(50)
+        cigarette.font = Font.heavyRoundedSystemFont(80)
 
-        widget.addSpacer(5)
+        widget.addSpacer(10)
 
         let count = await this.getTodayCount()
 
         let number = widget.addText(count.toString())
         number.centerAlignText()
         number.textColor = Color.white()
-        number.font = Font.heavyRoundedSystemFont(30)
+        number.font = Font.heavyRoundedSystemFont(40)
 
-        widget.addSpacer(5)
+        widget.addSpacer(10)
 
         let emoji = widget.addText(this.getEmoji(count))
         emoji.centerAlignText()
-        emoji.font = Font.boldSystemFont(10)
+        emoji.font = Font.boldSystemFont(25)
 
-        widget.addSpacer(15)
+        widget.addSpacer(10)
 
         let data = await this.getData(false, 7)
         let list = []
