@@ -352,7 +352,7 @@ class Loader {
         let titleConfig = options.titleConfig ? options.titleConfig : {
             'size': 36,
             'font': Font.semiboldSystemFont(36),
-            'color': '33cc33',
+            // 'color': '33cc33',
             'coord': new Point(30, 30),
         }
         this.log('drawChart titleConfig', titleConfig)
@@ -360,20 +360,20 @@ class Loader {
         let xConfig = options.xConfig ? options.xConfig : {
             'size': 22,
             'font': Font.systemFont(22),
-            'color': 'ffffff',
+            // 'color': 'ffffff',
         }
         this.log('drawChart xConfig', xConfig)
         // 坐标点竖线
         let vertLineConfig = options.vertLineConfig ? options.vertLineConfig : {
             'width': 0.5,
-            'color': 'ffffff',
+            // 'color': 'ffffff',
         }
         this.log('drawChart vertLineConfig', vertLineConfig)
         // 数据点文本
         let textConfig = options.textConfig ? options.textConfig : {
             'size': 22,
             'font': Font.systemFont(22),
-            'color': 'ffffff',
+            // 'color': 'ffffff',
         }
         this.log('drawChart textConfig', textConfig)
         // 数据点连线
@@ -429,7 +429,9 @@ class Loader {
 
         // 标题
         context.setFont(titleConfig.font)
-        context.setTextColor(new Color(titleConfig.color, 1))
+        if (titleConfig.color) {
+            context.setTextColor(new Color(titleConfig.color, 1))
+        }
         context.drawText(title, titleConfig.coord)
 
         context.setTextAlignedCenter()
@@ -441,7 +443,9 @@ class Loader {
 
             // 横轴坐标点文本
             context.setFont(xConfig.font)
-            context.setTextColor(new Color(xConfig.color, 1))
+            if (xConfig.color) {
+                context.setTextColor(new Color(xConfig.color, 1))
+            }
             let xCoordX = widgetPaddingX + xSpace * i - xConfig.size / 2
             context.drawText(title, new Point(xCoordX, xCoordY))
 
@@ -463,7 +467,9 @@ class Loader {
 
             // 数据点文本
             context.setFont(textConfig.font)
-            context.setTextColor(new Color(textConfig.color, 1))
+            if (textConfig.color) {
+                context.setTextColor(new Color(textConfig.color, 1))
+            }
             let textPoint = new Point(
                 widgetPaddingX + xSpace * i - textConfig.size / 2,
                 vertPointCoordY - elementMargin - textConfig.size
@@ -497,7 +503,9 @@ class Loader {
         path.move(pointBegin)
         path.addLine(pointEnd)
         context.addPath(path)
-        context.setStrokeColor(new Color(color, 1))
+        if (color) {
+            context.setStrokeColor(new Color(color, 1))
+        }
         context.setLineWidth(width)
         context.strokePath()
         return context
@@ -506,7 +514,9 @@ class Loader {
     // drawTextInRect ...
     drawTextInRect(context, rect, text, font, color) {
         context.setFont(font)
-        context.setTextColor(new Color(color, 1))
+        if (color) {
+            context.setTextColor(new Color(color, 1))
+        }
         context.drawTextInRect(text.toString(), rect)
         return context
     }
