@@ -18,7 +18,7 @@ class Smoke {
 
     // --------------------------------
 
-    async getData(desc = true) {
+    async getData(desc = true, limit = 0) {
         let list = []
         if (this.fm.fileExists(this.file)) {
             let content = this.fm.readString(this.file)
@@ -28,6 +28,9 @@ class Smoke {
                 list.sort(function (a, b) {
                     return desc ? (a.date < b.date ? 1 : -1) : (a.date > b.date ? 1 : -1)
                 })
+                if (limit) {
+                    list = list.slice(0, limit)
+                }
             }
         }
         this.loader.log('getData list', list)
@@ -129,7 +132,7 @@ class Smoke {
         widget.backgroundColor = Color.black()
         widget.refreshAfterDate = new Date(Date.now() + 1000 * 20)
 
-        let data = await this.getData(false)
+        let data = await this.getData(false, 5)
         if (!data) {
             return await this.renderSmall()
         }
