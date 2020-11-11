@@ -137,7 +137,15 @@ class Smoke {
 
     // smoke 点击组件, 触发吸烟动作回调
     async smoke() {
-        this.loader.dialog('点击了吸烟')
+        let selected = await this.loader.dialog(
+            '你又吸了一根烟??',
+            ['恩恩'],
+            '吸烟一时爽, 一直吸烟一直爽..'
+        )
+        if (selected == -1) {
+            return
+        }
+        return await this.setTodayCount()
     }
 
     // --------------------------------
