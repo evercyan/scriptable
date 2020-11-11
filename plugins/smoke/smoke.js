@@ -13,6 +13,7 @@ class Smoke {
 
         this.fm = FileManager.iCloud()
         this.file = this.fm.joinPath(this.fm.documentsDirectory(), 'smoke.json')
+        this.loader.log('constructor file', file)
     }
 
     // --------------------------------
