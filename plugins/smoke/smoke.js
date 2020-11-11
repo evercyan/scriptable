@@ -134,7 +134,7 @@ class Smoke {
         if (!data) {
             return await this.renderSmall()
         }
-        let title = '🚬🚬🚬'
+        let title = 'Smoke'
         let list = []
         for (let info of data) {
             list.push({
