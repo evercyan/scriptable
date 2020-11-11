@@ -70,10 +70,6 @@ class Smoke {
                 'count': 1,
             })
         }
-        list.push({
-            'date': '2020-11-10',
-            'count': 20,
-        })
 
         this.loader.log('setTodayCount list end', list)
         this.fm.writeString(this.file, JSON.stringify(list))
