@@ -124,7 +124,29 @@ class Smoke {
 
     // renderMedium ...
     async renderMedium() {
-        return await this.renderSmall()
+        let widget = new ListWidget()
+        widget.setPadding(0, 0, 0, 0)
+        widget.backgroundColor = Color.black()
+        widget.refreshAfterDate = new Date(Date.now() + 1000 * 20)
+
+        let data = await this.getData()
+        if (!data) {
+            return await this.renderSmall()
+        }
+        let title = 'Smoke'
+        let list = []
+        for (let info of data) {
+            list.push({
+                'title': info.date,
+                'count': info.count.toString(),
+            })
+        }
+        let options = {
+            'widgetSize': this.widgetSize,
+        }
+
+        widget.backgroundImage = await this.loader.drawChart(title, list, options)
+        return widget
     }
 
     // renderMedium ...
