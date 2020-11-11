@@ -137,7 +137,7 @@ class Smoke {
         let list = []
         for (let info of data) {
             list.push({
-                'title': info.date,
+                'title': this.loader.getDate(info.date, 'day'),
                 'count': info.count.toString(),
             })
         }

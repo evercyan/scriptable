@@ -252,7 +252,7 @@ class Loader {
     }
 
     // getDate ...
-    getDate(dateText = '') {
+    getDate(dateText = '', event = 'date') {
         let date = new Date()
         if (dateText) {
             date = new Date(dateText)
@@ -265,7 +265,19 @@ class Loader {
         if (day < 10) {
             day = '0' + day
         }
-        return `${date.getFullYear()}-${month}-${day}`
+        let resp = `${date.getFullYear()}-${month}-${day}`
+        switch (event) {
+            case 'year':
+                resp = date.getFullYear().toString()
+                break
+            case 'month':
+                resp = month.toString()
+                break
+            case 'day':
+                resp = day.toString()
+                break
+        }
+        return resp
     }
 
     // dialog 对话框
