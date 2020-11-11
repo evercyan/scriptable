@@ -68,6 +68,8 @@ class Smoke {
         }
         this.loader.log('setTodayCount list end', list)
         this.fm.writeString(this.file, JSON.stringify(list))
+
+        return await this.test()
     }
 
     getEmoji(count = 0) {
@@ -101,7 +103,7 @@ class Smoke {
         let widget = new ListWidget()
         widget.setPadding(0, 0, 0, 0)
         widget.backgroundColor = Color.black()
-        widget.refreshAfterDate = new Date(Date.now() + 1000 * 20)
+        // widget.refreshAfterDate = new Date(Date.now() + 1000 * 20)
 
         let cigarette = widget.addText('🚬')
         cigarette.centerAlignText()
@@ -130,7 +132,7 @@ class Smoke {
         let widget = new ListWidget()
         widget.setPadding(0, 0, 0, 0)
         widget.backgroundColor = Color.black()
-        widget.refreshAfterDate = new Date(Date.now() + 1000 * 20)
+        // widget.refreshAfterDate = new Date(Date.now() + 1000 * 20)
 
         let data = await this.getData(false, 7)
         if (!data) {
