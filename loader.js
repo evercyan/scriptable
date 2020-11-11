@@ -10,6 +10,8 @@
 // 应用内调试: await new Test().test()
 // 组件单独使用: await new Test(args.widgetParameter).init()
 
+// 可通过 widget.refreshAfterDate = new Date(Date.now() + 1000 * 20) 减小组件刷新间隔
+
 class Loader {
     // 调试模式
     debugMode = true
