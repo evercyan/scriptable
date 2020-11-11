@@ -186,9 +186,11 @@ class Smoke {
         let chart = widget.addImage(await this.loader.drawChart('', list, {
             'widgetSize': 'medium',
             'textConfig': {
-                'size': 30,
-                'color': 'f00',
-            }
+                'color': '33cc33',
+            },
+            'lineConfig': {
+                'color': '33cc33',
+            },
         }))
         chart.centerAlignImage()
 

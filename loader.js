@@ -406,7 +406,7 @@ class Loader {
         // 数据点连线
         let lineConfig = this.merge(options.lineConfig, {
             'width': 2,
-            'color': '33cc33',
+            'color': 'ffffff',
         })
         this.log('drawChart lineConfig', lineConfig)
 
