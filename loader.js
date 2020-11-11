@@ -397,8 +397,8 @@ class Loader {
         // 数据最大值
         let countMax
         list.forEach(item => {
-            if (typeof (countMax) == 'undefined' || item['count'] > countMax) {
-                countMax = item['count']
+            if (typeof (countMax) == 'undefined' || parseInt(item['count']) > countMax) {
+                countMax = parseInt(item['count'])
             }
         })
         // 有 xCount 个横轴坐标点
