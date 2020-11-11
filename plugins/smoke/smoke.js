@@ -40,6 +40,7 @@ class Smoke {
         this.loader.log('getTodayCount list', list)
         this.loader.log('getTodayCount date', date)
         for (let info in list) {
+            this.loader.log('getTodayCount info', info)
             if (info.date == date) {
                 return info.count
             }
