@@ -132,7 +132,7 @@ class Smoke {
         widget.backgroundColor = Color.black()
         widget.refreshAfterDate = new Date(Date.now() + 1000 * 20)
 
-        let data = await this.getData(false, 5)
+        let data = await this.getData(false, 7)
         if (!data) {
             return await this.renderSmall()
         }
