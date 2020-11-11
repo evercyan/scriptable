@@ -318,6 +318,7 @@ class Loader {
 
     // -------------------------------- 透明背景
 
+    // setBackground 根据入参设置组件背景
     async setBackground(widget, args = {}) {
         if (args.position && args.widgetSize) {
             // 透明背景
@@ -365,7 +366,7 @@ class Loader {
         let titleConfig = options.titleConfig ? options.titleConfig : {
             'size': 36,
             'font': Font.semiboldSystemFont(36),
-            // 'color': '33cc33',
+            'color': '33cc33',
             'coord': new Point(30, 30),
         }
         this.log('drawChart titleConfig', titleConfig)
@@ -373,20 +374,20 @@ class Loader {
         let xConfig = options.xConfig ? options.xConfig : {
             'size': 22,
             'font': Font.systemFont(22),
-            // 'color': 'ffffff',
+            'color': 'ffffff',
         }
         this.log('drawChart xConfig', xConfig)
         // 坐标点竖线
         let vertLineConfig = options.vertLineConfig ? options.vertLineConfig : {
             'width': 0.5,
-            // 'color': 'ffffff',
+            'color': 'ffffff',
         }
         this.log('drawChart vertLineConfig', vertLineConfig)
         // 数据点文本
         let textConfig = options.textConfig ? options.textConfig : {
             'size': 22,
             'font': Font.systemFont(22),
-            // 'color': 'ffffff',
+            'color': 'ffffff',
         }
         this.log('drawChart textConfig', textConfig)
         // 数据点连线
