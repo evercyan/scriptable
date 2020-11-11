@@ -440,7 +440,6 @@ class Loader {
             context.setFont(xConfig.font)
             context.setTextColor(new Color(xConfig.color, 1))
             let xCoordX = widgetPaddingX + xSpace * i - xConfig.size / 2
-            this.log('drawChart', i, 'xCoordX', xCoordX)
             context.drawText(title, new Point(xCoordX, xCoordY))
 
             // 横轴竖线或竖状
