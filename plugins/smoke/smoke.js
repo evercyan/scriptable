@@ -189,7 +189,7 @@ class Smoke {
             'widgetSize': this.widgetSize,
         }
 
-        widget.addImage = await this.loader.drawChart('', list, options)
+        widget.addImage(await this.loader.drawChart('', list, options))
         widget.centerAlignImage()
 
         return widget
