@@ -106,7 +106,7 @@ class Smoke {
 
         let cigarette = widget.addText('🚬')
         cigarette.centerAlignText()
-        cigarette.font = Font.heavyRoundedSystemFont(50)
+        cigarette.font = Font.heavyRoundedSystemFont(60)
 
         widget.addSpacer(5)
 
@@ -121,7 +121,7 @@ class Smoke {
 
         let emoji = widget.addText(this.getEmoji(count))
         emoji.centerAlignText()
-        emoji.font = Font.boldSystemFont(20)
+        emoji.font = Font.boldSystemFont(15)
 
         return widget
     }
