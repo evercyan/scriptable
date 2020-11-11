@@ -8,6 +8,7 @@ class Smoke {
 
     constructor(args = {}, loader = null) {
         this.args = args
+        this.args['widgetSize'] = config.widgetFamily
         this.loader = loader
         this.widgetSize = config.widgetFamily
 
@@ -154,7 +155,7 @@ class Smoke {
     async renderLarge() {
         let widget = new ListWidget()
         widget.setPadding(0, 0, 0, 0)
-        // widget.backgroundColor = Color.black()
+        widget = this.loader.background(widget, this.args)
 
         let cigarette = widget.addText('🚬')
         cigarette.centerAlignText()

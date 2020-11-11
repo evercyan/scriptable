@@ -314,6 +314,20 @@ class Loader {
         return widget
     }
 
+    background(widget, args = {}) {
+        if (args.position && args.widgetSize) {
+            // 透明背景
+            widget.backgroundImage = await this.getTransparentBg(
+                args.widgetSize,
+                args.position
+            )
+        } else if (args.bg) {
+            // 背景色
+            widget.backgroundColor = new Color(args.bg, 1)
+        }
+        return widget
+    }
+
     // -------------------------------- 透明背景
 
     // getTransparentBgPath ...
