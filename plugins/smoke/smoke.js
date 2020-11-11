@@ -173,7 +173,7 @@ class Smoke {
 
         let emoji = widget.addText(this.getEmoji(count))
         emoji.centerAlignText()
-        emoji.font = Font.boldSystemFont(25)
+        emoji.font = Font.boldSystemFont(15)
 
         widget.addSpacer(10)
 
