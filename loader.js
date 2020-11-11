@@ -538,7 +538,7 @@ class Loader {
 
     // runsInApp ...
     async runsInApp() {
-        this.log('runsInApp begin', args.widgetParameter)
+        this.log('runsInApp begin')
 
         // 获取入参, 解析执行回调
 
@@ -547,6 +547,7 @@ class Loader {
             '插件管理',
             '组件更新',
             '透明背景',
+            JSON.stringify(args.widgetParameter)
         ]
         if (this.debugMode) {
             actions.push(...[
