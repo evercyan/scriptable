@@ -154,7 +154,7 @@ class Smoke {
     async renderLarge() {
         let widget = new ListWidget()
         widget.setPadding(0, 0, 0, 0)
-        widget = this.loader.background(widget, this.args)
+        widget = await this.loader.setBackground(widget, this.args)
 
         let cigarette = widget.addText('🚬')
         cigarette.centerAlignText()

@@ -316,7 +316,9 @@ class Loader {
         return widget
     }
 
-    background(widget, args = {}) {
+    // -------------------------------- 透明背景
+
+    async setBackground(widget, args = {}) {
         if (args.position && args.widgetSize) {
             // 透明背景
             widget.backgroundImage = await this.getTransparentBg(args.widgetSize, args.position)
@@ -326,8 +328,6 @@ class Loader {
         }
         return widget
     }
-
-    // -------------------------------- 透明背景
 
     // getTransparentBgPath ...
     getTransparentBgPath(widgetSize, widgetPosition) {
