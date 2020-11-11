@@ -73,16 +73,14 @@ class Smoke {
     }
 
     getEmoji(count = 0) {
-        if (count > 20) {
-            return '💀💀💀💀'
-        } else if (count > 10) {
-            return '😡🤬😡'
-        } else if (count > 5) {
-            return '😠😠'
-        } else if (count > 0) {
-            return '😳'
+        if (!count) {
+            return '🤐'
         }
-        return '😊'
+        let repeatNum = Math.ceil(count / 5)
+        if (repeatNum > 5) {
+            repeatNum = 5
+        }
+        return '💀'.repeat(repeatNum)
     }
 
     // --------------------------------
