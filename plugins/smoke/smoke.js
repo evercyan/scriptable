@@ -128,7 +128,7 @@ class Smoke {
     async renderMedium() {
         let widget = new ListWidget()
         widget.setPadding(0, 0, 0, 0)
-        // widget.backgroundColor = Color.black()
+        widget.backgroundColor = Color.black()
 
         let data = await this.getData(false, 7)
         if (!data) {
@@ -154,7 +154,7 @@ class Smoke {
     async renderLarge() {
         let widget = new ListWidget()
         widget.setPadding(0, 0, 0, 0)
-        widget = await this.loader.setBackground(widget, this.args)
+        widget.backgroundColor = Color.black()
 
         let cigarette = widget.addText('🚬')
         cigarette.centerAlignText()
