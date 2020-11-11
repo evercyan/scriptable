@@ -176,23 +176,25 @@ class Smoke {
         widget.addSpacer(5)
 
         let data = await this.getData(false, 7)
-        let list = []
-        for (let info of data) {
-            list.push({
-                'title': this.loader.getDate(info.date, 'day'),
-                'count': info.count.toString(),
-            })
+        if (data.length > 1) {
+            let list = []
+            for (let info of data) {
+                list.push({
+                    'title': this.loader.getDate(info.date, 'day'),
+                    'count': info.count.toString(),
+                })
+            }
+            let chart = widget.addImage(await this.loader.drawChart('', list, {
+                'widgetSize': 'medium',
+                'textConfig': {
+                    'color': '33cc33',
+                },
+                'lineConfig': {
+                    'color': '33cc33',
+                },
+            }))
+            chart.centerAlignImage()
         }
-        let chart = widget.addImage(await this.loader.drawChart('', list, {
-            'widgetSize': 'medium',
-            'textConfig': {
-                'color': '33cc33',
-            },
-            'lineConfig': {
-                'color': '33cc33',
-            },
-        }))
-        chart.centerAlignImage()
 
         return widget
     }
