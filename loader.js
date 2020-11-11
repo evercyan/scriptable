@@ -539,16 +539,22 @@ class Loader {
     // runsInApp ...
     async runsInApp() {
         this.log('runsInApp begin')
+        if (this.args.callback) {
+            // 如果入参存在回调组件的 callback
+            let callback = this.args.callback
+            let module = importModule(this.filePath)
+            let plugin = new module(this.args, this)
+            if (typeof (plugin[callback]) === 'function') {
+                return await plugin[callback]()
+            }
+        }
 
-        // 获取入参, 解析执行回调
-
+        // 菜单操作
         let actions = [
             '插件商店',
             '插件管理',
             '组件更新',
             '透明背景',
-            JSON.stringify(args.widgetParameter),
-            this.plugin,
         ]
         if (this.debugMode) {
             actions.push(...[

@@ -135,6 +135,13 @@ class Smoke {
 
     // --------------------------------
 
+    // smoke 点击组件, 触发吸烟动作回调
+    async smoke() {
+        this.loader.dialog('点击了吸烟')
+    }
+
+    // --------------------------------
+
     async test() {
         if (config.runsInWidget) {
             return
