@@ -64,6 +64,7 @@ class Smoke {
 
         let number = widget.addText(count.toString())
         number.centerAlignText()
+        number.textColor = Color.white()
         number.font = Font.heavyRoundedSystemFont(30)
 
         widget.addSpacer(5)
