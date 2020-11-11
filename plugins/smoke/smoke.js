@@ -34,11 +34,13 @@ class Smoke {
         cigarette.centerAlignText()
         cigarette.font = Font.heavyRoundedSystemFont(50)
 
+        widget.addSpacer(5)
 
         let count = widget.addText('15')
         count.centerAlignText()
         count.font = Font.heavyRoundedSystemFont(30)
 
+        widget.addSpacer(5)
 
         let emoji = widget.addText('🤬🤬🤬')
         emoji.centerAlignText()
