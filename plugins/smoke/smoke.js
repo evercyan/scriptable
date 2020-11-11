@@ -30,7 +30,7 @@ class Smoke {
         let widget = new ListWidget()
         widget.setPadding(0, 0, 0, 0)
 
-        let cigarette = widget.addText('🚭')
+        let cigarette = widget.addText('🚬')
         cigarette.centerAlignText()
         cigarette.font = Font.heavyRoundedSystemFont(50)
 
