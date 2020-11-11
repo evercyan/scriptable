@@ -316,6 +316,19 @@ class Loader {
         return widget
     }
 
+    // merge ...
+    merge(obj, defaultObj) {
+        if (!obj) {
+            return defaultObj
+        }
+        for (let key in defaultObj) {
+            if (obj[key]) {
+                defaultObj[key] = obj[key]
+            }
+        }
+        return defaultObj
+    }
+
     // -------------------------------- 透明背景
 
     // setBackground 根据入参设置组件背景
@@ -363,38 +376,38 @@ class Loader {
         let mode = options.mode ? options.mode : 'line'
         let widgetSize = options.widgetSize ? options.widgetSize : 'medium'
         // 标题
-        let titleConfig = options.titleConfig ? options.titleConfig : {
+        let titleConfig = this.merge(options.titleConfig, {
             'size': 36,
             'font': Font.semiboldSystemFont(36),
             'color': '33cc33',
             'coord': new Point(30, 30),
-        }
+        })
         this.log('drawChart titleConfig', titleConfig)
         // 坐标点文本
-        let xConfig = options.xConfig ? options.xConfig : {
+        let xConfig = this.merge(options.xConfig, {
             'size': 22,
             'font': Font.systemFont(22),
             'color': 'ffffff',
-        }
+        })
         this.log('drawChart xConfig', xConfig)
         // 坐标点竖线
-        let vertLineConfig = options.vertLineConfig ? options.vertLineConfig : {
+        let vertLineConfig = this.merge(options.vertLineConfig, {
             'width': 0.5,
             'color': 'ffffff',
-        }
+        })
         this.log('drawChart vertLineConfig', vertLineConfig)
         // 数据点文本
-        let textConfig = options.textConfig ? options.textConfig : {
+        let textConfig = this.merge(options.textConfig, {
             'size': 22,
             'font': Font.systemFont(22),
             'color': 'ffffff',
-        }
+        })
         this.log('drawChart textConfig', textConfig)
         // 数据点连线
-        let lineConfig = options.lineConfig ? options.lineConfig : {
+        let lineConfig = this.merge(options.lineConfig, {
             'width': 2,
             'color': '33cc33',
-        }
+        })
         this.log('drawChart lineConfig', lineConfig)
 
         let widgetPointSize = this.getWidgetPointSize(widgetSize)
