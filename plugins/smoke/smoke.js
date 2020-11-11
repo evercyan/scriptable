@@ -54,7 +54,7 @@ class Smoke {
         widget.setPadding(0, 0, 0, 0)
         widget.backgroundColor = Color.black()
 
-        let cigarette = widget.addText('🚬')
+        let cigarette = widget.addText('🚬🚬')
         cigarette.centerAlignText()
         cigarette.font = Font.heavyRoundedSystemFont(50)
 
