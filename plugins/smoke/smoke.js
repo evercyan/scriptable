@@ -134,7 +134,7 @@ class Smoke {
         if (!data) {
             return await this.renderSmall()
         }
-        let title = 'Smoke'
+        let title = (await this.getTodayCount()).toString() + ' 🚬'
         let list = []
         for (let info of data) {
             list.push({
