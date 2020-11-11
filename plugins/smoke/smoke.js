@@ -137,8 +137,9 @@ class Smoke {
     async smoke() {
         let selected = await this.loader.dialog(
             '你又吸了一根烟??',
-            ['恩恩'],
-            '吸烟一时爽, 一直吸烟一直爽..'
+            ['吸了咋样吧'],
+            '吸烟一时爽, 一直吸烟一直爽..',
+            '我不是, 我没有, 别瞎说'
         )
         if (selected == -1) {
             return
