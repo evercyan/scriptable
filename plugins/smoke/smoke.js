@@ -26,7 +26,7 @@ class Smoke {
             if (list) {
                 // 按日期倒序
                 list.sort(function (a, b) {
-                    return desc ? (a.date < b.date ? 1 : -1) : (a.date < b.date ? 1 : -1)
+                    return desc ? (a.date < b.date ? 1 : -1) : (a.date > b.date ? 1 : -1)
                 })
             }
         }
