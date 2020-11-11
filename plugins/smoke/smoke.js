@@ -185,11 +185,9 @@ class Smoke {
                 'count': info.count.toString(),
             })
         }
-        let options = {
-            'widgetSize': this.widgetSize,
-        }
-
-        let chart = widget.addImage(await this.loader.drawChart('', list, options))
+        let chart = widget.addImage(await this.loader.drawChart('', list, {
+            'widgetSize': 'medium',
+        }))
         chart.centerAlignImage()
 
         return widget
