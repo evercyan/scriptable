@@ -136,10 +136,10 @@ class Smoke {
     // smoke 点击组件, 触发吸烟动作回调
     async smoke() {
         let selected = await this.loader.dialog(
-            '你又吸了一根烟??',
-            ['吸了咋样吧'],
-            '吸烟一时爽, 一直吸烟一直爽..',
-            '我不是, 我没有, 别瞎说'
+            'Are you smoking now?',
+            ['Yes 🐶'],
+            '',
+            'No 👋'
         )
         if (selected == -1) {
             return
