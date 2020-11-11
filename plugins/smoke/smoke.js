@@ -98,7 +98,7 @@ class Smoke {
         let widget = new ListWidget()
         widget.setPadding(0, 0, 0, 0)
         widget.backgroundColor = Color.black()
-        widget.refreshAfterDate = new Date(Date.now() + 1000 * 10)
+        widget.refreshAfterDate = new Date(Date.now() + 1000 * 20)
 
         let cigarette = widget.addText('🚬')
         cigarette.centerAlignText()
