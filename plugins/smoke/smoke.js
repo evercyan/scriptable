@@ -37,6 +37,8 @@ class Smoke {
     async getTodayCount() {
         let list = await this.getData()
         let date = this.loader.getDate()
+        this.loader.log('getTodayCount list', list)
+        this.loader.log('getTodayCount date', date)
         for (let info in list) {
             if (info.date == date) {
                 return info.count
@@ -98,8 +100,6 @@ class Smoke {
         let widget = new ListWidget()
         widget.setPadding(0, 0, 0, 0)
         widget.backgroundColor = Color.black()
-        // 打开动作
-        // widget.url = ''
 
         let cigarette = widget.addText('🚬')
         cigarette.centerAlignText()
