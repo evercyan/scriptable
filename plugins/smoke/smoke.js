@@ -12,7 +12,7 @@ class Smoke {
         this.widgetSize = config.widgetFamily
 
         this.fm = FileManager.iCloud()
-        this.file = this.fm.joinPath(this.fm.documentsDirectory(), 'smoke.json')
+        this.file = this.fm.joinPath(this.loader.docPath, 'smoke.json')
         this.loader.log('constructor file', file)
     }
 
