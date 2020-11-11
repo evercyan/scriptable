@@ -265,7 +265,7 @@ class Loader {
         if (day < 10) {
             day = '0' + day
         }
-        return `${date.getYear()}-${month}-${day}`
+        return `${date.getFullYear()}-${month}-${day}`
     }
 
     // dialog 对话框
