@@ -37,12 +37,12 @@ class Smoke {
 
         let count = widget.addText('15')
         count.centerAlignText()
-        count.font = Font.heavyRoundedSystemFont(40)
+        count.font = Font.heavyRoundedSystemFont(30)
 
 
         let emoji = widget.addText('🤬🤬🤬')
         emoji.centerAlignText()
-        emoji.font = Font.boldSystemFont(25)
+        emoji.font = Font.boldSystemFont(20)
 
         return widget
     }
