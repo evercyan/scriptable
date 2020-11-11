@@ -164,7 +164,7 @@ class Smoke {
 
         let number = widget.addText(count.toString())
         number.centerAlignText()
-        number.textColor = Color.white()
+        number.textColor = new Color('9a091b', 1)
         number.font = Font.heavyRoundedSystemFont(40)
 
         widget.addSpacer(5)
@@ -186,10 +186,10 @@ class Smoke {
         let chart = widget.addImage(await this.loader.drawChart('', list, {
             'widgetSize': 'medium',
             'textConfig': {
-                'color': '33cc33',
+                'color': '9a091b',
             },
             'lineConfig': {
-                'color': '33cc33',
+                'color': '9a091b',
             },
         }))
         chart.centerAlignImage()
