@@ -342,6 +342,7 @@ class Loader {
     //   - line 折线图
     //   - bar 竖状图
     async drawChart(title = '', list = [], options = {}) {
+        this.log('drawChart options', options)
         // 图表配置
         let mode = options.mode ? options.mode : 'line'
         let widgetSize = options.widgetSize ? options.widgetSize : 'medium'
