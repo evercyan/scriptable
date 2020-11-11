@@ -251,6 +251,23 @@ class Loader {
         return resp
     }
 
+    // getDate ...
+    getDate(dateText = '') {
+        let date = new Date()
+        if (dateText) {
+            date = new Date(dateText)
+        }
+        let month = date.getMonth() + 1
+        if (month < 10) {
+            month = '0' + month
+        }
+        let day = date.getDate()
+        if (day < 10) {
+            day = '0' + day
+        }
+        return `${date.getYear()}-${month}-${day}`
+    }
+
     // dialog 对话框
     async dialog(title = '', actions = [], message = '', cancel = '关闭') {
         let alert = new Alert()
@@ -521,7 +538,10 @@ class Loader {
 
     // runsInApp ...
     async runsInApp() {
-        this.log('runsInApp begin')
+        this.log('runsInApp begin', args.widgetParameter)
+
+        // 获取入参, 解析执行回调
+
         let actions = [
             '插件商店',
             '插件管理',

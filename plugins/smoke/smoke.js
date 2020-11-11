@@ -10,16 +10,60 @@ class Smoke {
         this.args = args
         this.loader = loader
         this.widgetSize = config.widgetFamily
+
+        this.fm = FileManager.iCloud()
+        this.file = this.fm.joinPath(this.fm.documentsDirectory(), 'smoke.json')
     }
 
     // --------------------------------
 
     async getData() {
-
+        let list = []
+        if (this.fm.fileExists(this.file)) {
+            let content = this.fm.readString(this.file)
+            list = JSON.parse(content)
+            if (list) {
+                // 按日期倒序
+                list.sort(function (a, b) {
+                    return a.date < b.date ? 1 : -1
+                })
+            }
+        }
+        this.loader.log('getData list', list)
+        return list
     }
 
     async getTodayCount() {
-        return 9;
+        let list = await this.getData()
+        let date = this.loader.getDate()
+        for (let info in list) {
+            if (info.date == date) {
+                return info.count
+            }
+        }
+        return 0
+    }
+
+    async setTodayCount() {
+        let list = await this.getData()
+        this.loader.log('setTodayCount list begin', list)
+        let date = this.loader.getDate()
+        let isExist = false
+        for (let i = 0; i < list.length; i++) {
+            if (list[i].date == date) {
+                list[i].count++
+                isExist = true
+                break
+            }
+        }
+        if (!isExist) {
+            list.unshift({
+                'date': date,
+                'count': 1,
+            })
+        }
+        this.loader.log('setTodayCount list end', list)
+        this.fm.writeString(this.file, JSON.stringify(list))
     }
 
     getEmoji(count = 0) {
@@ -53,6 +97,8 @@ class Smoke {
         let widget = new ListWidget()
         widget.setPadding(0, 0, 0, 0)
         widget.backgroundColor = Color.black()
+        // 打开动作
+        widget.url = ''
 
         let cigarette = widget.addText('🚬')
         cigarette.centerAlignText()
