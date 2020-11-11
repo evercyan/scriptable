@@ -8,7 +8,6 @@ class Smoke {
 
     constructor(args = {}, loader = null) {
         this.args = args
-        this.args['widgetSize'] = config.widgetFamily
         this.loader = loader
         this.widgetSize = config.widgetFamily
 

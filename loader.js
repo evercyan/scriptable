@@ -185,7 +185,9 @@ class Loader {
         this.log('initConfig begin', arg)
 
         this.plugin = 'friday/friday'
-        this.args = {}
+        this.args = {
+            'widgetSize': config.widgetFamily,
+        }
         if (arg) {
             let params = arg.split('?')
             if (params[0].indexOf('/') !== -1) {
@@ -317,10 +319,7 @@ class Loader {
     background(widget, args = {}) {
         if (args.position && args.widgetSize) {
             // 透明背景
-            widget.backgroundImage = await this.getTransparentBg(
-                args.widgetSize,
-                args.position
-            )
+            widget.backgroundImage = await this.getTransparentBg(args.widgetSize, args.position)
         } else if (args.bg) {
             // 背景色
             widget.backgroundColor = new Color(args.bg, 1)
