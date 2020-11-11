@@ -547,7 +547,8 @@ class Loader {
             '插件管理',
             '组件更新',
             '透明背景',
-            JSON.stringify(args.widgetParameter)
+            JSON.stringify(args.widgetParameter),
+            this.plugin,
         ]
         if (this.debugMode) {
             actions.push(...[
