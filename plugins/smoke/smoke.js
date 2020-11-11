@@ -26,10 +26,14 @@ class Smoke {
             if (list) {
                 // 按日期倒序
                 list.sort(function (a, b) {
-                    return desc ? (a.date < b.date ? 1 : -1) : (a.date > b.date ? 1 : -1)
+                    return a.date < b.date ? 1 : -1
                 })
+                // 截取
                 if (limit) {
                     list = list.slice(0, limit)
+                }
+                if (!desc) {
+                    list = list.reverse()
                 }
             }
         }
@@ -176,7 +180,7 @@ class Smoke {
 
         widget.addSpacer(5)
 
-        let data = await this.getData(false, 7)
+        let data = await this.getData(false, 15)
         if (data.length > 1) {
             let list = []
             for (let info of data) {
