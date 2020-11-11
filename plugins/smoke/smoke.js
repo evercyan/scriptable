@@ -14,6 +14,29 @@ class Smoke {
 
     // --------------------------------
 
+    async getData() {
+
+    }
+
+    async getTodayCount() {
+        return 9;
+    }
+
+    getEmoji(count = 0) {
+        if (count > 20) {
+            return '💀💀💀💀'
+        } else if (count > 10) {
+            return '😡🤬😡'
+        } else if (count > 5) {
+            return '😠😠'
+        } else if (count > 0) {
+            return '😳'
+        }
+        return '😊'
+    }
+
+    // --------------------------------
+
     // render ...
     async render() {
         if (this.widgetSize === 'medium') {
@@ -36,13 +59,15 @@ class Smoke {
 
         widget.addSpacer(5)
 
-        let count = widget.addText('15')
-        count.centerAlignText()
-        count.font = Font.heavyRoundedSystemFont(30)
+        let count = await this.getTodayCount()
+
+        let number = widget.addText(count.toString())
+        number.centerAlignText()
+        number.font = Font.heavyRoundedSystemFont(30)
 
         widget.addSpacer(5)
 
-        let emoji = widget.addText('🤬🤬🤬')
+        let emoji = widget.addText(this.getEmoji(count))
         emoji.centerAlignText()
         emoji.font = Font.boldSystemFont(20)
 
