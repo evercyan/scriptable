@@ -74,7 +74,7 @@ class Smoke {
 
     getEmoji(count = 0) {
         if (!count) {
-            return '🤐'
+            return '💪'
         }
         let repeatNum = Math.ceil(count / 5)
         if (repeatNum > 5) {
@@ -134,7 +134,7 @@ class Smoke {
         if (!data) {
             return await this.renderSmall()
         }
-        let title = 'Smoke'
+        let title = 'Smoke 🚬'
         let list = []
         for (let info of data) {
             list.push({
@@ -182,13 +182,13 @@ class Smoke {
         let s = await this.render()
         await s.presentSmall()
 
-        // this.widgetSize = 'medium'
-        // let m = await this.render()
-        // await m.presentMedium()
+        this.widgetSize = 'medium'
+        let m = await this.render()
+        await m.presentMedium()
 
-        // this.widgetSize = 'large'
-        // let l = await this.render()
-        // await l.presentLarge()
+        this.widgetSize = 'large'
+        let l = await this.render()
+        await l.presentLarge()
     }
 
     async init() {
