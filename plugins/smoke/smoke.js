@@ -70,47 +70,10 @@ class Smoke {
                 'count': 1,
             })
         }
-        list.push({
-            'date': '2020-11-10',
-            'count': 20,
-        })
-        list.push({
-            'date': '2020-11-09',
-            'count': 20,
-        })
-        list.push({
-            'date': '2020-11-08',
-            'count': 20,
-        })
-        list.push({
-            'date': '2020-11-07',
-            'count': 20,
-        })
-        list.push({
-            'date': '2020-11-06',
-            'count': 20,
-        })
-        list.push({
-            'date': '2020-11-05',
-            'count': 20,
-        })
-        list.push({
-            'date': '2020-11-04',
-            'count': 20,
-        })
-        list.push({
-            'date': '2020-11-03',
-            'count': 20,
-        })
-        list.push({
-            'date': '2020-11-02',
-            'count': 20,
-        })
-        list.push({
-            'date': '2020-11-01',
-            'count': 20,
-        })
-
+        // list.push({
+        //     'date': '2020-11-10',
+        //     'count': 20,
+        // })
 
         this.loader.log('setTodayCount list end', list)
         this.fm.writeString(this.file, JSON.stringify(list))
