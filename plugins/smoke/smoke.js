@@ -63,30 +63,6 @@ class Smoke {
                 'count': 1,
             })
         }
-        // list.push({
-        //     'date': '2020-11-10',
-        //     'count': 19,
-        // })
-        // list.push({
-        //     'date': '2020-11-09',
-        //     'count': 13,
-        // })
-        // list.push({
-        //     'date': '2020-11-08',
-        //     'count': 16,
-        // })
-        // list.push({
-        //     'date': '2020-11-07',
-        //     'count': 22,
-        // })
-        // list.push({
-        //     'date': '2020-11-06',
-        //     'count': 8,
-        // })
-        // list.push({
-        //     'date': '2020-11-05',
-        //     'count': 17,
-        // })
         this.loader.log('setTodayCount list end', list)
         this.fm.writeString(this.file, JSON.stringify(list))
     }
@@ -122,6 +98,7 @@ class Smoke {
         let widget = new ListWidget()
         widget.setPadding(0, 0, 0, 0)
         widget.backgroundColor = Color.black()
+        widget.refreshAfterDate = new Date(Date.now() + 1000 * 10)
 
         let cigarette = widget.addText('🚬')
         cigarette.centerAlignText()
