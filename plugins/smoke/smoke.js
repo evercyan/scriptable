@@ -100,7 +100,6 @@ class Smoke {
     async renderSmall() {
         let widget = new ListWidget()
         widget.setPadding(0, 0, 0, 0)
-        // widget.backgroundColor = Color.black()
 
         let cigarette = widget.addText('🚬')
         cigarette.centerAlignText()
@@ -112,7 +111,6 @@ class Smoke {
 
         let number = widget.addText(count.toString())
         number.centerAlignText()
-        // number.textColor = Color.white()
         number.font = Font.heavyRoundedSystemFont(30)
 
         widget.addSpacer(5)
@@ -166,7 +164,7 @@ class Smoke {
 
         let number = widget.addText(count.toString())
         number.centerAlignText()
-        // number.textColor = Color.white()
+        number.textColor = Color.white()
         number.font = Font.heavyRoundedSystemFont(40)
 
         widget.addSpacer(5)
