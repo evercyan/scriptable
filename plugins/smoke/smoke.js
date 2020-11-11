@@ -180,17 +180,17 @@ class Smoke {
             return
         }
 
-        // this.widgetSize = 'small'
-        // let s = await this.render()
-        // await s.presentSmall()
+        this.widgetSize = 'small'
+        let s = await this.render()
+        await s.presentSmall()
 
         // this.widgetSize = 'medium'
         // let m = await this.render()
         // await m.presentMedium()
 
-        this.widgetSize = 'large'
-        let l = await this.render()
-        await l.presentLarge()
+        // this.widgetSize = 'large'
+        // let l = await this.render()
+        // await l.presentLarge()
     }
 
     async init() {
