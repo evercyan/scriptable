@@ -14,7 +14,7 @@
 
 class Loader {
     // 调试模式
-    debugMode = true
+    debugMode = false
 
     loadString = 'string'
     loadJSON = 'json'
