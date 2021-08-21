@@ -1,6 +1,6 @@
 <div align="center">
 
-![scriptable](https://raw.githubusercontent.com/evercyan/cantor/master/resource/70/70f4eaaac8440477cac15b294c07a615.png)
+![scriptable](https://cdn.jsdelivr.net/gh/evercyan/repository/resource/70/70f4eaaac8440477cac15b294c07a615.png)
 
 iOS scriptable 组件神器
 
@@ -65,7 +65,7 @@ Loader 自我更新
 }
 ```
 
-![s-menu](https://raw.githubusercontent.com/evercyan/cantor/master/resource/b3/b3dabe04475811278dbcc53db57f0a11.png)
+![s-menu](https://cdn.jsdelivr.net/gh/evercyan/repository/resource/b3/b3dabe04475811278dbcc53db57f0a11.png)
 
 ---
 
@@ -90,7 +90,7 @@ args: {
 调用 system 插件时, 会向其 constructor 传入该 args 对象
 ```
 
-![s-param](https://raw.githubusercontent.com/evercyan/cantor/master/resource/0f/0f6a9a4d356bd0fbc473d34fba78a8a4.png)
+![s-param](https://cdn.jsdelivr.net/gh/evercyan/repository/resource/0f/0f6a9a4d356bd0fbc473d34fba78a8a4.png)
 
 ---
 
@@ -100,7 +100,7 @@ args: {
 
 ### 今天到周五了没
 
-![s-friday](https://raw.githubusercontent.com/evercyan/cantor/master/resource/f5/f514543f615113e01773c01cd2762ffa.png)
+![s-friday](https://cdn.jsdelivr.net/gh/evercyan/repository/resource/f5/f514543f615113e01773c01cd2762ffa.png)
 
 Parameter 参数
 
@@ -113,7 +113,7 @@ Parameter 参数
 
 ### 历史上的今天
 
-![s-history](https://raw.githubusercontent.com/evercyan/cantor/master/resource/17/17d88a0ad333b91e4698ea47c324463f.png)
+![s-history](https://cdn.jsdelivr.net/gh/evercyan/repository/resource/17/17d88a0ad333b91e4698ea47c324463f.png)
 
 Parameter 参数
 
@@ -127,7 +127,7 @@ Parameter 参数
 
 使用 `DrawContext` 绘制图表
 
-![s-chart](https://raw.githubusercontent.com/evercyan/cantor/master/resource/56/563d4ad1bdbe43e53cd0cf61c2610766.png)
+![s-chart](https://cdn.jsdelivr.net/gh/evercyan/repository/resource/56/563d4ad1bdbe43e53cd0cf61c2610766.png)
 
 - health.js
 
