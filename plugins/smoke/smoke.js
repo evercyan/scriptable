@@ -45,7 +45,7 @@ class Smoke {
         let list = await this.getData()
         let date = this.loader.getDate()
         for (let info of list) {
-            if (info.date == date) {
+            if (info.date === date) {
                 return info.count
             }
         }
@@ -58,7 +58,7 @@ class Smoke {
         let date = this.loader.getDate()
         let isExist = false
         for (let i = 0; i < list.length; i++) {
-            if (list[i].date == date) {
+            if (list[i].date === date) {
                 list[i].count++
                 isExist = true
                 break
@@ -214,7 +214,7 @@ class Smoke {
             '',
             'No 👋'
         )
-        if (selected == -1) {
+        if (selected === -1) {
             return
         }
         return await this.setTodayCount()

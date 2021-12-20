@@ -1,11 +1,11 @@
 /**
  * Friday
- * 
- * eg: 
+ *
+ * eg:
  * - 指定日期: friday/friday?date=2020-12-31
  * - 透明背景: friday?position=top-left
  * - 指定颜色: friday?bg=000000&color=ffffff
- * 
+ *
  * parameter:
  * - date: 指定日期, 可选, 默认当天 (eg: 2020-12-31)
  * - bg: 背景颜色, 可选, 默认 '#000'
@@ -68,7 +68,7 @@ class Friday {
         } else {
             let weekText = this.weekTexts['DEFAULT']
             let nextFriday = (5 - dayOfWeek + 7) % 7
-            let daysText = nextFriday == 1 ? 'day' : 'days'
+            let daysText = nextFriday === 1 ? 'day' : 'days'
             dateInfo['textInfo'] = {
                 'text': `${nextFriday} ${daysText} ${weekText['text']}`,
                 'emoji': weekText['emoji'].repeat(nextFriday),
@@ -103,11 +103,10 @@ class Friday {
             }
             if (this.args.position) {
                 // 透明背景
-                let img = await this.loader.getTransparentBg(
+                widget.backgroundImage = await this.loader.getTransparentBg(
                     this.widgetSize,
                     this.args.position
                 )
-                widget.backgroundImage = img
             } else {
                 // 背景色
                 if (this.args.bg) {

@@ -1,49 +1,38 @@
 <div align="center">
 
-![scriptable](https://cdn.jsdelivr.net/gh/evercyan/repository/resource/70/70f4eaaac8440477cac15b294c07a615.png)
+![scriptable](logo.png)
 
-iOS scriptable 组件神器
+iOS scriptable 神器也!!!
 
 </div>
 
 ---
 
-## 加载器
+## Install
+
+- iOS App Store 下载应用 [Scriptable](https://apps.apple.com/cn/app/scriptable/id1405459188)
+- iOS Safari 打开链接 [加载器](https://cdn.jsdelivr.net/gh/evercyan/scriptable/loader.js), 下载后通过 `Scriptable` 打开安装
+- 回主屏幕, 安装组件, 如下图
+
+## Usage
+
+加载器 (Loader) 统一应用入口, 聚合了 `插件管理` `组件自更新` `透明背景` 等等功能
+
+![s-menu](https://cdn.jsdelivr.net/gh/evercyan/repository/resource/b3/b3dabe04475811278dbcc53db57f0a11.png)
 
 ---
-
-### 安装
-
-移动端 [点我下载](https://github.com/evercyan/scriptable/releases/download/v0.0.0/loader.js) 直接安装
-
----
-
-### 功能
-
-加载器 (Loader) 统一入口, 提供以下功能
-
-- 插件商店
-```
-当前是直接跳转 github repo 页面
-```
 
 - 插件管理
-```
+
 渲染已安装插件列表
 支持已安装插件的 `运行` `更新` `删除` 等
-```
-
-- 组件更新: 
-```
-Loader 自我更新
-```
 
 - 透明背景
-```
-所谓透明背景, 即上传空屏截图, 按组件大小 `small` `medium` `large` 对应的位置对截图进行裁剪, 生成相应的背景图
+
+即上传空屏截图, 按组件大小 `small` `medium` `large` 对应的位置对截图进行裁剪, 生成相应的背景图
 需要使用透明背景组件时, 只需取其对应大小和位置的背景图片即可
-```
-```js
+
+```javascript
 {
     'small': [           // 小组件
         'top-left',      // 上左
@@ -65,11 +54,7 @@ Loader 自我更新
 }
 ```
 
-![s-menu](https://cdn.jsdelivr.net/gh/evercyan/repository/resource/b3/b3dabe04475811278dbcc53db57f0a11.png)
-
 ---
-
-### 使用
 
 加载器最主要是实现组件的渲染, 编辑组件:
 - Script: 选择 Loader
@@ -77,7 +62,7 @@ Loader 自我更新
 
 Parameter 解析规则如下
 ```
-eg: example/hello?foo=1&bar=2
+e.g. example/hello?foo=1&bar=2
 
 plugin: example/system
 下载 example 目录下的 system.js 插件
@@ -94,9 +79,7 @@ args: {
 
 ---
 
-## 插件列表
-
----
+## Plugin
 
 ### 今天到周五了没
 
@@ -104,12 +87,10 @@ args: {
 
 Parameter 参数
 
-- date: 指定日期, 可选, 默认当天 (eg: 2020-12-31)
+- date: 指定日期, 可选, 默认当天 (e.g. 2020-12-31)
 - bg: 背景颜色, 可选, 默认 '#000'
 - color: 字体颜色, 可选, 默认 '#fff'
-- position: 组件位置, 可选, (eg: top-left), 设置此值时, 即使用 `透明背景`
-
----
+- position: 组件位置, 可选, (e.g. top-left), 设置此值时, 即使用 `透明背景`
 
 ### 历史上的今天
 
@@ -117,34 +98,4 @@ Parameter 参数
 
 Parameter 参数
 
-- date: 指定日期, 可选, 默认当天 (eg: 2020-12-31)
-
----
-
-### example
-
-- chart.js 
-
-使用 `DrawContext` 绘制图表
-
-![s-chart](https://cdn.jsdelivr.net/gh/evercyan/repository/resource/56/563d4ad1bdbe43e53cd0cf61c2610766.png)
-
-- health.js
-
-通过 `快捷指令` 将 `健康` 数据写入 `iCloud`, `scriptable` 读取显示
-
-写数据需手动触发, 体验不好 
-
-- notify.js
-
-调用系统通知
-
-- system.js
-
-系统信息
-
-- transparent.js 
-
-透明背景示例
-
----
+- date: 指定日期, 可选, 默认当天 (e.g. 12-31)

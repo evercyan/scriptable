@@ -10,7 +10,7 @@
 
 class History {
     title = '历史上的今天'
-    logo = 'https://gitee.com/evercyan/cantor/raw/master/resource/94/94b6d8f2a46b5e95aff9310605058731.png'
+    logo = 'https://cdn.jsdelivr.net/gh/evercyan/repository/resource/94/94b6d8f2a46b5e95aff9310605058731.png'
 
     // 缓存 key
     cachePrefix = "evercyan:history"
@@ -30,7 +30,7 @@ class History {
 
     // getApiUrl 获取 api 链接
     getApiUrl(month, day) {
-        return `http://api.avatardata.cn/HistoryToday/LookUp?key=99d502aa72fc4918a3dc0c7fe68f2822&yue=${month}&ri=${day}&type=1&page=1&rows=50`
+        return `http://v.juhe.cn/todayOnhistory/queryEvent.php?key=915c4e1feebd58c8d4f4fc41908be0f3&date=${month}/${day}`
     }
 
     // getDate 拼接日期
@@ -81,9 +81,6 @@ class History {
                 let res = await this.loader.get(url, this.loader.loadJSON)
                 list = res['result']
             } catch (e) { }
-            for (let i = 0; i < list.length; i++) {
-                list[i]['date'] = this.getDate(list[i]['year'], list[i]['month'], list[i]['day'])
-            }
             this.loader.log('getData list', list)
             Keychain.set(key, JSON.stringify(list))
         }

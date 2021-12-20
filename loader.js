@@ -42,9 +42,9 @@ class Loader {
     phoneSizes = {
         '2532': {
             'models': ['12', '12 Pro'],
-            'small': { 'w': 474, 'h': 474 },
-            'medium': { 'w': 1014, 'h': 474 },
-            'large': { 'w': 1014, 'h': 1062 },
+            'small': {'w': 474, 'h': 474},
+            'medium': {'w': 1014, 'h': 474},
+            'large': {'w': 1014, 'h': 1062},
             'left': 78,
             'right': 618,
             'top': 231,
@@ -53,9 +53,9 @@ class Loader {
         },
         '2688': {
             'models': ['Xs Max', '11 Pro Max'],
-            'small': { 'w': 507, 'h': 507 },
-            'medium': { 'w': 1080, 'h': 507 },
-            'large': { 'w': 1080, 'h': 1137 },
+            'small': {'w': 507, 'h': 507},
+            'medium': {'w': 1080, 'h': 507},
+            'large': {'w': 1080, 'h': 1137},
             'left': 81,
             'right': 654,
             'top': 228,
@@ -64,9 +64,9 @@ class Loader {
         },
         '1792': {
             'models': ['11', 'Xr'],
-            'small': { 'w': 338, 'h': 338 },
-            'medium': { 'w': 720, 'h': 338 },
-            'large': { 'w': 720, 'h': 758 },
+            'small': {'w': 338, 'h': 338},
+            'medium': {'w': 720, 'h': 338},
+            'large': {'w': 720, 'h': 758},
             'left': 54,
             'right': 436,
             'top': 160,
@@ -75,9 +75,9 @@ class Loader {
         },
         '2436': {
             'models': ['X', 'Xs', '11 Pro'],
-            'small': { 'w': 465, 'h': 465 },
-            'medium': { 'w': 987, 'h': 465 },
-            'large': { 'w': 987, 'h': 1035 },
+            'small': {'w': 465, 'h': 465},
+            'medium': {'w': 987, 'h': 465},
+            'large': {'w': 987, 'h': 1035},
             'left': 69,
             'right': 591,
             'top': 213,
@@ -86,9 +86,9 @@ class Loader {
         },
         '2208': {
             'models': ['6+', '6s+', '7+', '8+'],
-            'small': { 'w': 471, 'h': 471 },
-            'medium': { 'w': 1044, 'h': 471 },
-            'large': { 'w': 1044, 'h': 1071 },
+            'small': {'w': 471, 'h': 471},
+            'medium': {'w': 1044, 'h': 471},
+            'large': {'w': 1044, 'h': 1071},
             'left': 99,
             'right': 672,
             'top': 114,
@@ -97,9 +97,9 @@ class Loader {
         },
         '1334': {
             'models': ['6', '6s', '7', '8'],
-            'small': { 'w': 296, 'h': 296 },
-            'medium': { 'w': 642, 'h': 296 },
-            'large': { 'w': 642, 'h': 648 },
+            'small': {'w': 296, 'h': 296},
+            'medium': {'w': 642, 'h': 296},
+            'large': {'w': 642, 'h': 648},
             'left': 54,
             'right': 400,
             'top': 60,
@@ -108,9 +108,9 @@ class Loader {
         },
         '1136': {
             'models': ['5', '5s', '5c', 'SE'],
-            'small': { 'w': 282, 'h': 282 },
-            'medium': { 'w': 584, 'h': 282 },
-            'large': { 'w': 584, 'h': 622 },
+            'small': {'w': 282, 'h': 282},
+            'medium': {'w': 584, 'h': 282},
+            'large': {'w': 584, 'h': 622},
             'left': 30,
             'right': 332,
             'top': 59,
@@ -148,7 +148,7 @@ class Loader {
         this.user = 'evercyan'
         this.repo = 'scriptable'
         this.repoUrl = `https://github.com/${this.user}/${this.repo}`
-        this.downloadUrl = `https://gitee.com/${this.user}/${this.repo}`
+        this.downloadUrl = `https://cdn.jsdelivr.net/gh/${this.user}/${this.repo}`
 
         this.fm = FileManager.local()
         this.docPath = this.fm.joinPath(this.fm.documentsDirectory(), this.user)
@@ -179,7 +179,7 @@ class Loader {
      * 本地存储时, 会将 / 替换为 @
      */
     initConfig(arg = '') {
-        if (arg == '') {
+        if (arg === '') {
             arg = args.widgetParameter || args['queryParameters']['__widget__']
         }
         this.log('initConfig begin', arg)
@@ -239,9 +239,9 @@ class Loader {
         }
 
         let resp
-        if (load == this.loadJSON) {
+        if (load === this.loadJSON) {
             resp = await req.loadJSON()
-        } else if (load == this.loadImage) {
+        } else if (load === this.loadImage) {
             resp = await req.loadImage()
         } else {
             resp = await req.loadString()
@@ -478,7 +478,7 @@ class Loader {
 
             // 横轴竖线或竖状
             let vertCoordX = widgetPaddingX + xSpace * i - vertLineConfig.width / 2
-            if (mode == 'bar') {
+            if (mode === 'bar') {
                 vertCoordX = widgetPaddingX + xSpace * i
             }
             let vertPointCoordY = graphBottomY - (count / countMax) * graphHeight
@@ -577,7 +577,7 @@ class Loader {
 
     // download 下载插件代码
     async downloadPlugin() {
-        let fileUrl = `${this.downloadUrl}/raw/main/plugins/${this.plugin}.js?_=${+new Date}`
+        let fileUrl = `${this.downloadUrl}/plugins/${this.plugin}.js?_=${+new Date}`
         try {
             let content = await this.get(fileUrl)
             await this.fm.writeString(this.filePath, content)
@@ -625,7 +625,7 @@ class Loader {
         ]
         let selected = await this.dialog('菜单', actions)
         this.log('runsInApp selected', selected)
-        if (selected == -1) {
+        if (selected === -1) {
             return
         }
         return commands[selected].apply(this)
@@ -653,7 +653,7 @@ class Loader {
         // 插件弹窗
         let selectedPlugin = await this.dialog('插件管理', pluginList, '点击管理该插件')
         this.log('localPlugin selectedPlugin', selectedPlugin)
-        if (selectedPlugin == -1) {
+        if (selectedPlugin === -1) {
             return
         }
         let pluginName = pluginList[selectedPlugin]
@@ -665,7 +665,7 @@ class Loader {
         ]
         let selectedAction = await this.dialog(pluginName, actions)
         this.log('localPlugin selectedAction', selectedAction)
-        if (selectedAction == -1) {
+        if (selectedAction === -1) {
             return
         }
         switch (selectedAction) {
@@ -699,7 +699,7 @@ class Loader {
             '需要上传手机空屏截图'
         )
         this.log('localPlugin selected', selected)
-        if (selected == -1) {
+        if (selected === -1) {
             return
         }
 
@@ -733,7 +733,7 @@ class Loader {
                 }
                 imgOption.y = phoneSize[positions[0]]
                 // large bottom, 其左上实际处于 middle
-                if (widgetSize == 'large' && positions[0] == 'bottom') {
+                if (widgetSize === 'large' && positions[0] === 'bottom') {
                     imgOption.y = phoneSize['middle']
                 }
                 this.log('updateBgImage imgOption', imgOption)
@@ -756,7 +756,7 @@ class Loader {
     // updateLoader 更新加载器
     async updateLoader() {
         try {
-            let fileUrl = `${this.downloadUrl}/raw/main/loader.js?_=${+new Date}`
+            let fileUrl = `${this.downloadUrl}/loader.js?_=${+new Date}`
             let content = await this.get(fileUrl)
             await this.fm.writeString(module.filename, content)
         } catch (e) {
@@ -773,7 +773,7 @@ class Loader {
 
         let selected = await this.dialog('文件管理', fileList, '点击删除该文件')
         this.log('fileManage selected', selected)
-        if (selected == -1) {
+        if (selected === -1) {
             return
         }
 
@@ -785,13 +785,13 @@ class Loader {
 
     // debug 调试
     async debug() {
-        this.initConfig('smoke')
+        // this.initConfig('smoke')
         // this.initConfig('example/health')
         // this.initConfig('example/notify')
         // this.initConfig('example/chart')
         // this.initConfig('example/transparent')
         // this.initConfig('example/system')
-        // this.initConfig('history')
+        this.initConfig('history')
         // this.initConfig('friday')
         // this.initConfig('example/bg')
         await this.downloadPlugin()
