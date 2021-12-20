@@ -2,14 +2,13 @@
 // These must be at the very top of the file. Do not edit.
 // icon-color: deep-blue; icon-glyph: home;
 
-// Loader
-// https://github.com/evercyan/scriptable
+// Loader: https://github.com/evercyan/scriptable
+// Last Update: 2021-12-20 19:20:11
 // 插件加载器, 提供如插件下载更新调试等功能
 
 // 插件单独使用时, 依赖 loader 的部分将无法生效, 请自行调整
 // 应用内调试: await new Test().test()
 // 组件单独使用: await new Test(args.widgetParameter).init()
-
 // 可通过 widget.refreshAfterDate = new Date(Date.now() + 1000 * 20) 减小组件刷新间隔
 
 class Loader {
