@@ -1,9 +1,9 @@
 /**
  * History
- * 
- * eg: 
+ *
+ * eg:
  * - 指定日期: history?date=2020-12-31
- * 
+ *
  * parameter:
  * - date: 指定日期, 可选, 默认当天 (eg: 2020-12-31)
  */
@@ -73,14 +73,19 @@ class History {
             if (cache) {
                 list = JSON.parse(cache)
             }
-        } catch (e) { }
+        } catch (e) {
+        }
 
         if (list.length <= 0) {
             try {
                 let url = this.getApiUrl(month, day)
                 let res = await this.loader.get(url, this.loader.loadJSON)
                 list = res['result']
-            } catch (e) { }
+                for (let i = 0; i < list.length; i++) {
+                    list[i]['date'] = list[i]['date'].replace('年', '-').replace('月', '-').replace('日', '')
+                }
+            } catch (e) {
+            }
             this.loader.log('getData list', list)
             Keychain.set(key, JSON.stringify(list))
         }
