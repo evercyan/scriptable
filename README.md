@@ -81,21 +81,30 @@ args: {
 
 ## Plugin
 
-### 今天到周五了没
+### 周五了没?
+
+- 名称 
+
+  `friday/friday`
+
+- 参数
+
+  - date: 指定日期, 可选, 默认当天 (e.g. 2020-12-31)
+  - bg: 背景颜色, 可选, 默认 '#000'
+  - color: 字体颜色, 可选, 默认 '#fff'
+  - position: 组件位置, 可选, (e.g. top-left), 设置此值时, 即使用 `透明背景`
 
 ![s-friday](https://cdn.jsdelivr.net/gh/evercyan/repository/resource/f5/f514543f615113e01773c01cd2762ffa.png)
 
-Parameter 参数
-
-- date: 指定日期, 可选, 默认当天 (e.g. 2020-12-31)
-- bg: 背景颜色, 可选, 默认 '#000'
-- color: 字体颜色, 可选, 默认 '#fff'
-- position: 组件位置, 可选, (e.g. top-left), 设置此值时, 即使用 `透明背景`
-
 ### 历史上的今天
 
+
+- 名称
+
+  `history/history`
+
+- 参数
+
+  - date: 指定日期, 可选, 默认当天 (e.g. 12-31)
+
 ![s-history](https://cdn.jsdelivr.net/gh/evercyan/repository/resource/17/17d88a0ad333b91e4698ea47c324463f.png)
-
-Parameter 参数
-
-- date: 指定日期, 可选, 默认当天 (e.g. 12-31)
