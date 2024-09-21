@@ -33,8 +33,8 @@ class Friday {
             'emoji': '🥳🥳🥳',
         },
         'SUN': {
-            'text': `it's last day`,
-            'emoji': '🥺🥺🥺',
+            'text': `happy weekend`,
+            'emoji': '🥳🥳🥳',
         },
     }
     // 字体色
@@ -156,7 +156,6 @@ class Friday {
         if (config.runsInWidget) {
             return
         }
-
         this.widgetSize = 'small'
         let s = await this.render()
         await s.presentSmall()

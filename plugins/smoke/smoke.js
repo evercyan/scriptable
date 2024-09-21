@@ -153,7 +153,7 @@ class Smoke {
         return widget
     }
 
-    // renderMedium ...
+    // renderLarge ...
     async renderLarge() {
         let widget = new ListWidget()
         widget.setPadding(0, 0, 0, 0)
