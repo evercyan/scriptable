@@ -3,7 +3,7 @@
 // icon-color: deep-blue; icon-glyph: home;
 
 // Loader: https://github.com/evercyan/scriptable
-// Last Update: 2021-12-21 11:10:43
+// Last Update: 2024-09-21 21:54:00
 // 插件加载器, 提供如插件下载更新调试等功能
 
 // 插件单独使用时, 依赖 loader 的部分将无法生效, 请自行调整
