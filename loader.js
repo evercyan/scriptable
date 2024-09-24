@@ -44,11 +44,11 @@ class Loader {
             'small': { 'w': 474, 'h': 474 },
             'medium': { 'w': 1014, 'h': 474 },
             'large': { 'w': 1014, 'h': 1062 },
-            'left': 78,
-            'right': 618,
-            'top': 231,
-            'middle': 819,
-            'bottom': 1407
+            'left': 82,
+            'right': 622,
+            'top': 270,
+            'middle': 858,
+            'bottom': 1446
         },
         '2532': {
             'models': ['12', '12 Pro'],
