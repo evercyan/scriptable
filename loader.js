@@ -44,9 +44,9 @@ class Loader {
             'small': { 'w': 474, 'h': 474 },
             'medium': { 'w': 1014, 'h': 474 },
             'large': { 'w': 1014, 'h': 1062 },
-            'left': 82,
+            'left': 80,
             'right': 622,
-            'top': 270,
+            'top': 240,
             'middle': 858,
             'bottom': 1446
         },
