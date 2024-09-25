@@ -41,14 +41,14 @@ class Loader {
     phoneSizes = {
         '2556': {
             'models': ['16'],
-            'small': { 'w': 474, 'h': 474 },
-            'medium': { 'w': 1014, 'h': 474 },
-            'large': { 'w': 1014, 'h': 1062 },
-            'left': 80,
-            'right': 622,
-            'top': 240,
-            'middle': 858,
-            'bottom': 1446
+            'small': { 'w': 487, 'h': 487 },
+            'medium': { 'w': 1031, 'h': 487 },
+            'large': { 'w': 1098, 'h': 1098 },
+            'left': 86,
+            'right': 633,
+            'top': 260,
+            'middle': 872,
+            'bottom': 1483
         },
         '2532': {
             'models': ['12', '12 Pro'],
